@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ContactsList", "ContactsList.pyproj", "{3F298FA7-DD4D-407B-9AFF-63E40D82C0EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F298FA7-DD4D-407B-9AFF-63E40D82C0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F298FA7-DD4D-407B-9AFF-63E40D82C0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33C74C45-41F3-4F8C-B286-7E2261D897D8}
+	EndGlobalSection
+EndGlobal
