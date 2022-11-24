@@ -4,8 +4,6 @@ import time
 dbase = mysql.connector.connect(host="localhost", user="root", passwd="IloveUNCC*0!", database="contactbook")
 cursor = dbase.cursor()
 
-#cursor.execute("CREATE TABLE Person (FirstName CHAR(20), LastName CHAR(20), PhoneNum CHAR(10), Email CHAR(30))")
-
 xFlag = True
 while xFlag:
     print("---Contact List---")
