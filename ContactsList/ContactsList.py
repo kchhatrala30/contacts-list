@@ -24,7 +24,8 @@ while xFlag:
     elif choice == "S":
         searchBy = input("Enter info about the contact: ")
         searchBy = "%" + searchBy + "%"
-        cursor.execute("Select * FROM person where FirstName LIKE \"" + searchBy + "\" OR LastName LIKE \"" + searchBy + "\" OR PhoneNum LIKE \"" + searchBy + "\" OR Email LIKE \"" + searchBy + "\"")
+        toSearch = (searchBy, searchBy, searchBy, searchBy)
+        cursor.execute("SELECT * FROM person WHERE FirstName LIKE %s OR LastName LIKE %s OR PhoneNum LIKE %s OR Email LIKE %s", toSearch)
         for i in cursor:
             print(i)
 
