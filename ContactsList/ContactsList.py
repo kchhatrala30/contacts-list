@@ -1,7 +1,7 @@
 import mysql.connector
 import time
 
-dbase = mysql.connector.connect(host="localhost", user="root", passwd="IloveUNCC*0!", database="contactbook")
+dbase = mysql.connector.connect(host="localhost", user="root", passwd="CLASSIFIED", database="contactbook")
 cursor = dbase.cursor()
 
 xFlag = True
@@ -9,18 +9,26 @@ while xFlag:
     print("---Contact List---")
     print("What would you like to do?")
     print("\tView all contacts: V")
-    print("\tEnter new contact: E")
+    print("\tSearch for a contact: S")
+    print("\tEnter new contact: N")
     print("\tDelete contact: D")
     print("\tExit the contact list: X")
     choice = input("Select your option: ")
     print()
 
     if choice == "V":
-        cursor.execute("SELECT * FROM person;")
+        cursor.execute("SELECT * FROM person")
         for i in cursor:
             print(i)
 
-    elif choice == "E":
+    elif choice == "S":
+        searchBy = input("Enter info about the contact: ")
+        searchBy = "%" + searchBy + "%"
+        cursor.execute("Select * FROM person where FirstName LIKE \"" + searchBy + "\" OR LastName LIKE \"" + searchBy + "\" OR PhoneNum LIKE \"" + searchBy + "\" OR Email LIKE \"" + searchBy + "\"")
+        for i in cursor:
+            print(i)
+
+    elif choice == "N":
         firstName = input("Enter first name: ")
         lastName = input("Enter last name: ")
         phoneNum = input("Enter phone number: ")
