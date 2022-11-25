@@ -44,13 +44,26 @@ while xFlag:
         firstName = input("Enter first name: ")
         lastName = input("Enter last name: ")
         
-        cursor.execute("DELETE FROM person WHERE FirstName = \"" + firstName + "\" AND LastName = \"" + lastName + "\"")
+        toDelete = (firstName, lastName)
+        cursor.execute("DELETE FROM person WHERE FirstName = %s AND LastName = %s", toDelete)
         dbase.commit()
         print("Contact for", firstName, lastName, "has been deleted successfully")
 
     elif choice == "X":
         xFlag = False
         exit()
+    
+    elif choice == "resetList.CLEAR":
+        cursor.execute("DELETE FROM person")
 
+    elif choice == "resetList.TEST":
+        cursor.execute("DELETE FROM person")
+        reset1 = ("TestFirst", "Test01", "1234567890", "first@test.com")
+        reset2 = ("TestSecond", "Test02", "0987654321", "second@test.com")
+        reset3 = ("TestThird", "Test03", "0123456789", "third@test.com")
+        cursor.execute("INSERT INTO person VALUES(%s, %s, %s, %s)", reset1)
+        cursor.execute("INSERT INTO person VALUES(%s, %s, %s, %s)", reset2)
+        cursor.execute("INSERT INTO person VALUES(%s, %s, %s, %s)", reset3)
+    
     print()
     time.sleep(1)
