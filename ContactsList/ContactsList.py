@@ -66,7 +66,7 @@ while xFlag:
         cursor.execute("INSERT INTO person VALUES(%s, %s, %s, %s)", reset3)
     
     else:
-        print("Invalid input. Enter one of the following options.")
+        print("Invalid input. Please enter one of the following options.")
     
     print()
     time.sleep(1)
